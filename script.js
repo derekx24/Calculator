@@ -56,7 +56,7 @@ function deletePrevious() {
     if (result != '') previous.textContent = `Ans = ${result}`;
     if (equationState == 1) {
         firstNum = firstNum.toString().slice(0, -1);
-    } else if (equationState === 2 || ((equationState === 3) & (secondNum === ''))) {
+    } else if (equationState === 2 || ((equationState === 3) && (secondNum === ''))) {
         operator = '';
         equationState = 1;
     } else {
@@ -148,7 +148,7 @@ function handleKey(e) {
     if (e.key === 'Backspace') deletePrevious();
     if (e.key >= 0 && e.key <= 9) inputNumber(e.key);
     if (e.key === '.') addDecimal();
-    if (e.key === '=' || e.key === 'Enter') performOperation();
+    if (e.key === '=') performOperation();
     if (e.key === '+') selectOperator('+');
     if (e.key === '-') selectOperator('−');
     if (e.key === '*') selectOperator('×');
