@@ -1,6 +1,11 @@
 :root {
     --btn-color: #ededed;
     --btn-hover: #d8d2d2;
+    --ebtn-color: #6bb6e5;
+    --ebtn-hover: #4594c6;
+    --obtn-color: #c1c1c1;
+    --obtn-hover: #959595;
+
 }
 
 *{
@@ -67,3 +72,28 @@ button:hover {
 button:active {
     background-color: var(--btn-color);
 }
+
+.e-btn {
+    background-color: var(--ebtn-color);
+}
+
+.e-btn:hover {
+    background-color: var(--ebtn-hover);
+}
+
+.e-btn:active {
+    background-color: var(--ebtn-color);
+}
+
+.o-btn {
+    background-color: var(--obtn-color);
+}
+
+.o-btn:hover {
+    background-color: var(--obtn-hover);
+}
+
+.o-btn:active {
+    background-color: var(--obtn-color);
+}
+
