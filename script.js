@@ -21,6 +21,7 @@ operatorButton.forEach((button) => {
 
 decimalButton.onclick = () => addDecimal();
 equalsButton.onclick = () => performOperation();
+window.addEventListener('keydown', handleKey);
 
 function updateDisplay() {
     display.textContent = firstNum + operator + secondNum;
@@ -101,3 +102,13 @@ function performOperation() {
     display.textContent = result;
     reset();
 }
+
+function handleKey(e) {
+    if (e.key >= 0 && e.key <= 9) inputNumber(e.key);
+    if (e.key === '.') addDecimal();
+    if (e.key === '=' || e.key === 'Enter') performOperation();
+    if (e.key === '+') selectOperator('+');
+    if (e.key === '-') selectOperator('-');
+    if (e.key === '*') selectOperator('x');
+    if (e.key === '/') selectOperator('÷');
+  }
