@@ -41,6 +41,7 @@ function inputNumber(number) {
 }
 
 function selectOperator(o) {
+    if (firstNum === "") firstNum = "0";
     equationState = 2;
     operator = o;
     updateDisplay();
