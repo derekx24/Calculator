@@ -97,6 +97,7 @@ function reset() {
 }
 
 function performOperation() {
+    if (secondNum == '') return;
     result = round(calculate());
     previous.textContent = firstNum + operator + secondNum + '=';
     display.textContent = result;
@@ -108,7 +109,7 @@ function handleKey(e) {
     if (e.key === '.') addDecimal();
     if (e.key === '=' || e.key === 'Enter') performOperation();
     if (e.key === '+') selectOperator('+');
-    if (e.key === '-') selectOperator('-');
-    if (e.key === '*') selectOperator('x');
+    if (e.key === '-') selectOperator('−');
+    if (e.key === '*') selectOperator('×');
     if (e.key === '/') selectOperator('÷');
   }
