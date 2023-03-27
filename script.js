@@ -1,4 +1,3 @@
-
 let equationState = 1;
 let firstNum = "";
 let operator = "";
@@ -6,6 +5,7 @@ let secondNum = "";
 let result = "";
 
 const display = document.getElementById('display');
+const previous = document.getElementById('previous');
 const numberButton = document.querySelectorAll('.n-btn');
 const operatorButton = document.querySelectorAll('.o-btn');
 const decimalButton = document.querySelector('.d-btn');
@@ -91,6 +91,7 @@ function reset() {
 
 function performOperation() {
     result = round(calculate());
+    previous.textContent = firstNum + operator + secondNum + '=';
     display.textContent = result;
     reset();
 }
