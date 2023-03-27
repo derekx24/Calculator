@@ -1,8 +1,8 @@
 let equationState = 1;
-let firstNum = "";
-let operator = "";
-let secondNum = "";
-let result = "";
+let firstNum = '';
+let operator = '';
+let secondNum = '';
+let result = '';
 
 const display = document.getElementById('display');
 const previous = document.getElementById('previous');
@@ -27,6 +27,7 @@ function updateDisplay() {
 }
 
 function inputNumber(number) {
+    if (result != '') previous.textContent = `Ans = ${result}`;
     if (equationState >= 2) {
         equationState = 3;
         if (secondNum === 0 && number === 0) secondNum = 0;
@@ -41,7 +42,11 @@ function inputNumber(number) {
 }
 
 function selectOperator(o) {
-    if (firstNum === "") firstNum = "0";
+    if (result != '') previous.textContent = `Ans = ${result}`;
+    if (firstNum === '' && result != '') {
+        firstNum = result;
+    } else if (firstNum === '') firstNum = '0';
+
     equationState = 2;
     operator = o;
     updateDisplay();
@@ -85,9 +90,9 @@ function round(n) {
 
 function reset() {
     equationState = 1;
-    firstNum = "";
-    operator = "";
-    secondNum = "";
+    firstNum = '';
+    operator = '';
+    secondNum = '';
 }
 
 function performOperation() {
