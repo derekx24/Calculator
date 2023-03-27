@@ -24,7 +24,7 @@ body {
     display: flex;
     flex-direction: column;
     border: 3px solid;
-    width: 400px;
+    width: 500px;
     margin: 40px;
     align-self: center;
     border-radius: 15px;
@@ -41,10 +41,12 @@ body {
     border-radius: 15px;
     text-align: right;
     background-color: aliceblue;
+    word-wrap: break-word;
+    word-break: break-all;
 }
 
 .display {
-    min-height: 40px;
+    min-height: 45px;
     font-size: 38px;
 }
 
@@ -64,6 +66,10 @@ button {
     padding: 28px;
     border-radius: 15px;
     background-color: var(--btn-color);
+}
+
+.ans-btn {
+	grid-column: 1 / 3;
 }
 
 button:hover {
@@ -86,14 +92,23 @@ button:active {
     background-color: var(--ebtn-color);
 }
 
+.ans-btn,
+.ac-btn,
+.del-btn,
 .o-btn {
     background-color: var(--obtn-color);
 }
 
+.ans-btn,
+.ac-btn,
+.del-btn,
 .o-btn:hover {
     background-color: var(--obtn-hover);
 }
 
+.ans-btn,
+.ac-btn,
+.del-btn,
 .o-btn:active {
     background-color: var(--obtn-color);
 }
