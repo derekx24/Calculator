@@ -21,10 +21,15 @@ function updateDisplay() {
 }
 
 function inputNumber(number) {
-    if (equationState == 1) {
-        firstNum += number;
+    if (equationState >= 2) {
+        equationState = 3;
+        if (secondNum == 0 && number == 0) secondNum = 0;
+        else if (secondNum == 0) secondNum = number;
+        else secondNum += number;
     } else {
-        secondNum += number;
+        if (firstNum == 0 && number == 0) firstNum = 0;
+        else if (firstNum == 0) firstNum = number;
+        else firstNum += number;
     }
     updateDisplay();
 }
